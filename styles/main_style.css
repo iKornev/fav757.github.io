@@ -17,6 +17,30 @@ body {
   font-family: sans-serif;
 }
 
+.top-menu {
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 1.43rem;
+  color: #fff;
+}
+
+.top-menu-container {
+  padding: 1% 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-menu li, ul {
+  display: inline-block;
+}
+
+.top-menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -30,24 +54,6 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-}
-
-.top-menu {
-  position: fixed;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  font-size: 1.3rem;
-}
-
-.top-menu-container {
-  padding: 2% 15%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.top-menu li, ul {
-  display: inline-block;
 }
 
 .header_middle-text {
