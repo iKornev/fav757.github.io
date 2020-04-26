@@ -13,3 +13,53 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 /*Main rules*/
+body {
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  height: 100vh;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),
+    url("../resources/images/header-hero-image1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.top-menu {
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 1.3rem;
+}
+
+.top-menu-container {
+  padding: 2% 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-menu li, ul {
+  display: inline-block;
+}
+
+.header_middle-text {
+  text-align: center;
+}
+
+.header_middle-text h1 {
+  font-size: 5rem;
+  color: #fff;
+}
+
+.header_middle-text p{
+  font-size: 1rem;
+  color: #fff;
+}
