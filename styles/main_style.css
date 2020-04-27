@@ -68,6 +68,7 @@ header {
   flex-flow: column wrap;
   height: 100vh;
   box-sizing: border-box;
+  padding: 0 10%;
   background: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)),
     url("../resources/images/header-hero-image1.jpg");
@@ -87,7 +88,7 @@ header {
 }
 
 .header_middle-text h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   margin: 1rem 0;
 }
 
@@ -100,7 +101,7 @@ header {
   background: none;
   border: 1px solid var(--main-orange);
   color: inherit;
-  margin: 2em 0;
+  margin-top: 2em;
   padding: 1rem 2rem;
   font-size: 1rem;
 }
@@ -112,5 +113,5 @@ header {
 .header_social {
   flex: 0;
   width: 100%;
-  background: blue;
+  background: rgba(121, 46, 46, 0.5);
 }
