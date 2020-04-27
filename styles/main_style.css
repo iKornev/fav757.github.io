@@ -65,7 +65,6 @@ mark {
 header {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-flow: column wrap;
   height: 100vh;
   box-sizing: border-box;
@@ -79,12 +78,17 @@ header {
 }
 
 .header_middle-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  flex: 1;
 }
 
 .header_middle-text h1 {
   font-size: 5rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .header_middle-text p {
@@ -92,14 +96,21 @@ header {
 }
 
 .header_middle-text button {
+  width: fit-content;
   background: none;
   border: 1px solid var(--main-orange);
   color: inherit;
-  margin: 2rem 0;
+  margin: 2em 0;
   padding: 1rem 2rem;
   font-size: 1rem;
 }
 
 .header_middle-text button:hover {
   color: var(--main-orange);
+}
+
+.header_social {
+  flex: 0;
+  width: 100%;
+  background: blue;
 }
