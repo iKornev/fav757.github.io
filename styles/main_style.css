@@ -14,22 +14,29 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /*Main rules*/
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
+/*Top menu section*/
 .top-menu {
   position: fixed;
   width: 100%;
-  background: rgba(255, 255, 255, 0.4);
-  font-size: 1.43rem;
   color: #fff;
+  text-shadow: 1px 1px 2px gray;
 }
 
 .top-menu-container {
-  padding: 1% 15%;
+  padding: 0.5rem 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.top-menu h2 {
+  font-size: 3rem;
+  font-family: 'Bangers', cursive, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1rem;
 }
 
 .top-menu li, ul {
@@ -39,8 +46,10 @@ body {
 .top-menu a {
   text-decoration: none;
   color: inherit;
+  margin: 0 1rem;
 }
 
+/*Header section*/
 header {
   display: flex;
   justify-content: center;
