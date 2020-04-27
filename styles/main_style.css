@@ -119,4 +119,9 @@ mark {
   padding: 0 10%;
   box-sizing: border-box;
   color: var(--sub-text-color);
+  font-size: 1.2rem;
+}
+
+.social-info i{
+  margin-right: 1rem;
 }
