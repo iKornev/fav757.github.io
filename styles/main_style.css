@@ -65,6 +65,11 @@ mark {
   color: var(--main-orange);
 }
 
+.top-menu_nav-open-button {
+  font-size: 2rem;
+  display: none;
+}
+
 /*Hero section*/
 .hero-zone {
   display: flex;
@@ -136,5 +141,17 @@ mark {
 
 /*Rules for low screen*/
 @media screen and (max-width: 900px) {
-  
+  /*Top menu section*/
+  .top-menu_nav {
+    display: none;
+  }
+
+  .top-menu_nav-open-button {
+    display: block;
+  }
+
+  /*Social info section*/
+  .social-info {
+    flex-flow: column nowrap;
+  }
 }
