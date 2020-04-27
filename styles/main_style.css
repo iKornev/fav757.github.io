@@ -54,6 +54,9 @@ mark {
 .top-menu a {
   text-decoration: none;
   color: inherit;
+}
+
+.top-menu li:nth-of-type(even) a{
   margin: 0 1rem;
 }
 
