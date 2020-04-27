@@ -75,6 +75,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  color: white;
 }
 
 .header_middle-text {
@@ -83,10 +84,22 @@ header {
 
 .header_middle-text h1 {
   font-size: 5rem;
-  color: #fff;
+  margin: 2rem 0;
 }
 
-.header_middle-text p{
+.header_middle-text p {
   font-size: 1rem;
-  color: #fff;
+}
+
+.header_middle-text button {
+  background: none;
+  border: 1px solid var(--main-orange);
+  color: inherit;
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.header_middle-text button:hover {
+  color: var(--main-orange);
 }
