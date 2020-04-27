@@ -125,3 +125,11 @@ mark {
 .social-info i{
   margin-right: 0.4rem;
 }
+
+.social-info i{
+  margin-right: 0.4rem;
+}
+
+.social-info i[title]{
+  color: var(--main-orange);
+}
