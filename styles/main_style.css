@@ -96,7 +96,7 @@ mark {
   align-self: center;
   width: fit-content;
   background: none;
-  border: 1px solid var(--main-orange);
+  border: 2px solid var(--main-orange);
   color: inherit;
   margin-top: 2em;
   padding: 1rem 2rem;
@@ -132,4 +132,9 @@ mark {
 
 .social-info i[title]{
   color: var(--main-orange);
+}
+
+/*Rules for low screen*/
+@media screen and (max-width: 900px) {
+  
 }
