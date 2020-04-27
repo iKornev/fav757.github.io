@@ -64,14 +64,14 @@ mark {
   color: var(--main-orange);
 }
 
-/*Header section*/
-header {
+/*Hero section*/
+.hero-zone {
   display: flex;
   justify-content: center;
+  align-content: center;
   flex-flow: column wrap;
   height: 100vh;
   box-sizing: border-box;
-  padding: 0 10%;
   background: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)),
     url("../resources/images/header-hero-image1.jpg");
@@ -79,27 +79,20 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   color: white;
-}
-
-.header_middle-text {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  flex: 1;
 }
 
-.header_middle-text h1 {
+.hero-zone h1 {
   font-size: 4rem;
   margin: 1rem 0;
 }
 
-.header_middle-text p {
+.hero-zone p {
   font-size: 1rem;
 }
 
-.header_middle-text button {
+.hero-zone button {
+  align-self: center;
   width: fit-content;
   background: none;
   border: 1px solid var(--main-orange);
@@ -109,12 +102,14 @@ header {
   font-size: 1rem;
 }
 
-.header_middle-text button:hover {
+.hero-zone button:hover {
   color: var(--main-orange);
 }
 
-.header_social {
-  flex: 0;
+.social-info {
+  position: absolute;
+  top: calc(100vh - 3rem);
   width: 100%;
+  height: 3rem;
   background: rgba(121, 46, 46, 0.5);
 }
