@@ -181,10 +181,18 @@ footer {
   padding: 2rem 10%;
   background-color: #151515;
   color: gray;
+  line-height: 2rem;
 }
 
 footer div {
   flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+footer h3 {
+  color: var(--main-orange);
 }
 
 /*Rules for low screen*/
