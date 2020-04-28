@@ -169,10 +169,23 @@ mark {
   flex: 3;
  }
 
- .content_article_preview-text h3{
+.content_article_preview-text h3{
   font-size: 1.5rem;
   margin-bottom: 1rem;
  }
+
+ /*Footer section*/
+footer {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 10%;
+  background-color: #151515;
+  color: gray;
+}
+
+footer div {
+  flex: 1;
+}
 
 /*Rules for low screen*/
 @media screen and (max-width: 900px) {
@@ -193,5 +206,14 @@ mark {
   /*Content section*/
   .content_article {
     flex-flow: column wrap;
+  }
+
+  /*Footer section*/
+  footer {
+    flex-flow: column wrap;
+  }
+
+  footer div{
+    margin-top: 2rem;
   }
 }
