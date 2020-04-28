@@ -219,9 +219,11 @@ footer h3 {
   /*Footer section*/
   footer {
     flex-flow: column wrap;
+    align-items: flex-start;
   }
 
   footer div{
     margin-top: 2rem;
+    align-items: flex-start;
   }
 }
