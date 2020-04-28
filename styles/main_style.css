@@ -140,6 +140,29 @@ mark {
   color: var(--main-orange);
 }
 
+/*Content section*/
+.content {
+  padding: 0 10%;
+  border: 2px dashed black;
+}
+
+.content_article {
+  display: flex;
+}
+
+.content_article_preview-img {
+ flex: 1;
+}
+
+.content_article_preview-img img{
+  width: 100%;
+ }
+
+.content_article_preview-text {
+  flex: 2;
+ }
+
+
 /*Rules for low screen*/
 @media screen and (max-width: 900px) {
   /*Top menu section*/
