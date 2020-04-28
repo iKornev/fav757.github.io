@@ -32,7 +32,9 @@ mark {
 .top-menu {
   position: fixed;
   width: 100%;
-  color: #fff;
+  color: white;
+  animation-duration: 1s;
+  z-index: 999;
 }
 
 .top-menu-container {
@@ -127,6 +129,7 @@ mark {
   box-sizing: border-box;
   color: var(--sub-text-color);
   font-size: 1.2rem;
+  z-index: 1;
 }
 
 .social-info i{
