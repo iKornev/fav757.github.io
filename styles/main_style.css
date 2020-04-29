@@ -212,6 +212,7 @@ footer h3 {
   /*Social info section*/
   .social-info {
     flex-flow: column nowrap;
+    top: calc(100vh - 4rem);
   }
 
   /*Content section*/

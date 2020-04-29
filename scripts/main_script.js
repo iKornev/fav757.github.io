@@ -2,19 +2,6 @@
 // Page elements variables
 const topMenu = document.body.querySelector('.top-menu');
 
-// Discribes how article could be shown
-class ArticlePreview extends HTMLElement {
-  connectedCallback() {
-    this.className = 'content_article';
-    
-    fetch(`resources/articles/${this.dataset.articleName}.html`)
-      .then((response) => response.text())
-      .then((text) => this.innerHTML = text);
-  }
-}
-
-customElements.define('app-article-preview', ArticlePreview);
-
 // Change top menu color on scroll
 document.addEventListener('scroll', function () {
   if (window.pageYOffset) {
@@ -27,3 +14,31 @@ document.addEventListener('scroll', function () {
     topMenu.style.boxShadow = '';
   }
 });
+
+// Discribes how articles could be shown
+class ArticlesPreview extends HTMLElement {
+  constructor() {
+    super();
+
+    for (let i = 0; i < 2; i++) {
+      fetch('resources/articles/borsh.html')
+        .then((response) => response.text())
+        .then((html) => this.insertAdjacentHTML('beforeEnd', html))
+    }
+  }
+
+  static articlesDB = [
+    {
+      name: 'borsh',
+      date: new Date('05/28/2020'),
+    },
+
+    {
+      name: 'vino',
+      date: new Date('05/27/2020')
+    }
+  ];
+}
+
+customElements.define('articles-preview', ArticlesPreview);
+
