@@ -144,6 +144,12 @@ mark {
   color: var(--main-orange);
 }
 
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
 /*Content section*/
 .content {
   padding: 0 10%;
@@ -179,6 +185,13 @@ mark {
 .content_article_preview-text h3{
   font-size: 1.5rem;
   margin-bottom: 1rem;
+ }
+
+ /*Button for more articles section*/
+ .more-articles-button i{
+  font-size: 3rem;
+  color: gray;
+  margin-bottom: 2rem;
  }
 
  /*Footer section*/
