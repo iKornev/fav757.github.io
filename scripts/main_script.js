@@ -19,7 +19,7 @@ document.addEventListener('scroll', function () {
 class ArticlesPreview extends HTMLElement {
   constructor() {
     super();
-    ArticlesPreview.articlesDB.sort((a, b) => a.date - b.date);
+    ArticlesPreview.articlesDB.sort((a, b) => b.date - a.date);
     this.loadArticles();
   }
 
@@ -35,14 +35,11 @@ class ArticlesPreview extends HTMLElement {
         }
       }
 
-      let htmlText;
-
       await fetch(`resources/articles/${notUserArticle.name}.html`)
         .then((response) => response.text())
-        .then((html) => htmlText = html)
+        .then((html) => this.insertAdjacentHTML('beforeEnd', html));
 
-      this.insertAdjacentHTML('beforeEnd', htmlText);
-      this.lastElementChild.setAttribute('name', notUserArticle.name)
+      this.lastElementChild.setAttribute('name', notUserArticle.name);
     }
   }
 
