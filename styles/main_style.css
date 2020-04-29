@@ -172,6 +172,10 @@ mark {
   flex: 3;
  }
 
+.content_article_preview-text p:first-of-type::after {
+  content: "...";
+}
+
 .content_article_preview-text h3{
   font-size: 1.5rem;
   margin-bottom: 1rem;
