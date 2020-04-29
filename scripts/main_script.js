@@ -52,3 +52,6 @@ async function loadArticles() {
       contentElement.lastElementChild.setAttribute('name', notUserArticle.name);
   }
 }
+
+// Call function to load articles when page is opened first time
+loadArticles();
