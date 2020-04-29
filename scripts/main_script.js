@@ -3,7 +3,7 @@
 // Temp database that will be moved to backend
 const database = {
   // Information about articles
-  articles : [
+  articles: [
     {
       name: 'borsh',
       date: new Date('05/11/2020')
@@ -49,7 +49,7 @@ async function loadArticles() {
       .then((response) => response.text())
       .then((html) => contentElement.insertAdjacentHTML('beforeEnd', html));
 
-      contentElement.lastElementChild.setAttribute('name', notUserArticle.name);
+    contentElement.lastElementChild.setAttribute('name', notUserArticle.name);
   }
 }
 
