@@ -1,9 +1,25 @@
 'use strict';
-// Page elements variables
-const topMenu = document.body.querySelector('.top-menu');
+
+// Temp database that will be moved to backend
+const database = {
+  // Information about articles
+  articles : [
+    {
+      name: 'borsh',
+      date: new Date('05/11/2020')
+    },
+
+    {
+      name: 'vino',
+      date: new Date('05/13/2020')
+    }
+  ],
+};
 
 // Change top menu color on scroll
 document.addEventListener('scroll', function () {
+  const topMenu = document.body.querySelector('.top-menu');
+
   if (window.pageYOffset) {
     topMenu.style.background = 'white';
     topMenu.style.color = 'black';
@@ -15,47 +31,24 @@ document.addEventListener('scroll', function () {
   }
 });
 
-// Discribes how articles could be shown
-class ArticlesPreview extends HTMLElement {
-  constructor() {
-    super();
-    ArticlesPreview.articlesDB.sort((a, b) => b.date - a.date);
-    this.loadArticles();
-  }
+// Load first three not used articles
+async function loadArticles() {
+  const contentElement = document.body.querySelector('.content');
 
-  // Load +3 not used articles
-  async loadArticles() {
-    for (let i = 0; i < 2; i++) {
-      let notUserArticle;
+  for (let i = 0; i < 2; i++) {
+    let notUserArticle;
 
-      for (let article of ArticlesPreview.articlesDB) {
-        if (!this.querySelector(`[name="${article.name}"]`)) {
-          notUserArticle = article;
-          break;
-        }
+    for (let article of database.articles) {
+      if (!contentElement.querySelector(`[name="${article.name}"]`)) {
+        notUserArticle = article;
+        break;
       }
-
-      await fetch(`resources/articles/${notUserArticle.name}.html`)
-        .then((response) => response.text())
-        .then((html) => this.insertAdjacentHTML('beforeEnd', html));
-
-      this.lastElementChild.setAttribute('name', notUserArticle.name);
     }
+
+    await fetch(`resources/articles/${notUserArticle.name}.html`)
+      .then((response) => response.text())
+      .then((html) => contentElement.insertAdjacentHTML('beforeEnd', html));
+
+      contentElement.lastElementChild.setAttribute('name', notUserArticle.name);
   }
-
-  // Database with articles info
-  static articlesDB = [
-    {
-      name: 'borsh',
-      date: new Date('05/11/2020')
-    },
-
-    {
-      name: 'vino',
-      date: new Date('05/13/2020')
-    }
-  ];
 }
-
-customElements.define('articles-preview', ArticlesPreview);
-
