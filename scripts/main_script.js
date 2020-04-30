@@ -40,29 +40,36 @@ class ArticlesPreviews extends HTMLElement {
   constructor() {
     super();
 
+    // Create element that will load more articles
     const buttonForMoreArticle = document.createElement('i');
     buttonForMoreArticle.className = 'fas fa-plus';
     buttonForMoreArticle.addEventListener('click', ArticlesPreviews.loadArticles);
-
     this.after(buttonForMoreArticle);
+
+    // Intial article load
+    ArticlesPreviews.loadArticles();
   }
 
+  // Load a new article
   static async loadArticles() {
     const element = document.querySelector('.content');
+
+    // Get not used article
     let notUserArticle;
-  
     for (let article of database.articles) {
       if (!element.querySelector(`[name="${article.name}"]`)) {
         notUserArticle = article;
         break;
       }
     }
-  
-    await fetch(`resources/articles/${notUserArticle.name}.html`)
-      .then((response) => response.text())
-      .then((html) => element.insertAdjacentHTML('beforeEnd', html));
-  
-      element.lastElementChild.setAttribute('name', notUserArticle.name);
+
+    // Get response from server with article html and add it on the page
+    const response = await fetch(`resources/articles/${notUserArticle.name}.html`);
+    const htmlText = await response.text();
+    element.insertAdjacentHTML('beforeEnd', htmlText);
+
+    // Set name for atricle (used for checking if it's on the page)
+    element.lastElementChild.setAttribute('name', notUserArticle.name);
   }
 }
 
