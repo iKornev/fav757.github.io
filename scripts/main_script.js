@@ -1,21 +1,81 @@
 'use strict';
 
-// Discribes how article could be shown
-class ArticlePreview extends HTMLElement {
-  connectedCallback() {
-    this.className = 'content_article';
-    this.innerHTML = `<div class="content_article_preview-img">
-    <img src="resources/images/preview_for_artcicle1.jpg" alt="Превью новости"></img>
-  </div>
+// Temp database that will be moved to backend
+const database = {
+  // Information about articles
+  articles: [
+    {
+      name: 'borsh',
+      date: new Date('05/11/2020')
+    },
 
-  <div class="content_article_preview-text">
-    <h3>Кулинары предупреждают: борщ не прощает ошибок</h3>
-    <p>Борщ считается одним из главных блюд у разных народов, и имеет множество рецептов приготовления. Но
-      кулинары
-      уверены, что в любом случае при его приготовлении непростительны ошибки, передает «МИР 24»</p>
-    <p>This article is about ${this.dataset.articleName}</p>
-  </div>`;
+    {
+      name: 'vino',
+      date: new Date('05/13/2020')
+    },
+
+    {
+      name: 'food-for-homeless',
+      date: new Date('05/10/2020')
+    }
+  ],
+};
+
+// Change top menu color on scroll
+document.addEventListener('scroll', function () {
+  const topMenu = document.body.querySelector('.top-menu');
+
+  if (window.pageYOffset) {
+    topMenu.style.background = 'white';
+    topMenu.style.color = 'black';
+    topMenu.style.boxShadow = '0 2px 2px gray';
+  } else {
+    topMenu.style.background = '';
+    topMenu.style.color = '';
+    topMenu.style.boxShadow = '';
+  }
+});
+
+//
+document.getElementById('hero-zone-button').addEventListener('click', function () {
+  document.body.querySelector('.social-info').scrollIntoView({behavior: "smooth"});
+});
+
+class ArticlesPreviews extends HTMLElement {
+  constructor() {
+    super();
+
+    // Create element that will load more articles
+    const buttonForMoreArticle = document.createElement('i');
+    buttonForMoreArticle.className = 'fas fa-plus';
+    buttonForMoreArticle.addEventListener('click', ArticlesPreviews.loadArticles);
+    this.after(buttonForMoreArticle);
+
+    // Intial article load
+    ArticlesPreviews.loadArticles();
+  }
+
+  // Load a new article
+  static async loadArticles() {
+    const element = document.querySelector('.content');
+
+    // Get not used article
+    let notUserArticle;
+    for (let article of database.articles) {
+      if (!element.querySelector(`[name="${article.name}"]`)) {
+        notUserArticle = article;
+        break;
+      }
+    }
+
+    // Get response from server with article html and add it on the page
+    const response = await fetch(`resources/articles/${notUserArticle.name}.html`);
+    const htmlText = await response.text();
+    element.insertAdjacentHTML('beforeEnd', htmlText);
+
+    // Set name for atricle (used for checking if it's on the page)
+    element.lastElementChild.setAttribute('name', notUserArticle.name);
   }
 }
 
-customElements.define('app-article-preview', ArticlePreview);
+customElements.define('articles-preview', ArticlesPreviews);

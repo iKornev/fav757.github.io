@@ -32,7 +32,9 @@ mark {
 .top-menu {
   position: fixed;
   width: 100%;
-  color: #fff;
+  color: white;
+  animation-duration: 1s;
+  z-index: 999;
 }
 
 .top-menu-container {
@@ -81,7 +83,7 @@ mark {
   box-sizing: border-box;
   background: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)),
-    url("../resources/images/header-hero-image1.jpg");
+    url("../resources/images/design/header-hero-image1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -127,6 +129,7 @@ mark {
   box-sizing: border-box;
   color: var(--sub-text-color);
   font-size: 1.2rem;
+  z-index: 1;
 }
 
 .social-info i{
@@ -141,6 +144,12 @@ mark {
   color: var(--main-orange);
 }
 
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
 /*Content section*/
 .content {
   padding: 0 10%;
@@ -152,6 +161,18 @@ mark {
   margin: 2rem 0;
   background: white;
   box-shadow: 0px 0px 5px gray;
+  animation-name: showContentArticle;
+  animation-duration: 1.5s;
+}
+
+@keyframes showContentArticle {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .content_article_preview-img {
@@ -169,10 +190,42 @@ mark {
   flex: 3;
  }
 
- .content_article_preview-text h3{
+.content_article_preview-text p:first-of-type::after {
+  content: "...";
+}
+
+.content_article_preview-text h3{
   font-size: 1.5rem;
   margin-bottom: 1rem;
  }
+
+ /*Button for more articles section*/
+ .content .fas, .fa-plus{
+  font-size: 3rem;
+  color: gray;
+  margin-bottom: 2rem;
+ }
+
+ /*Footer section*/
+footer {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 10%;
+  background-color: #151515;
+  color: gray;
+  line-height: 2rem;
+}
+
+footer div {
+  flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+footer h3 {
+  color: var(--main-orange);
+}
 
 /*Rules for low screen*/
 @media screen and (max-width: 900px) {
@@ -188,10 +241,22 @@ mark {
   /*Social info section*/
   .social-info {
     flex-flow: column nowrap;
+    top: calc(100vh - 4rem);
   }
 
   /*Content section*/
   .content_article {
     flex-flow: column wrap;
+  }
+
+  /*Footer section*/
+  footer {
+    flex-flow: column wrap;
+    align-items: flex-start;
+  }
+
+  footer div{
+    margin-top: 2rem;
+    align-items: flex-start;
   }
 }

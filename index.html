@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Webtech project</title>
   <link rel="stylesheet" type="text/css" href="styles/main_style.css">
-  <link rel="icon" type="image/png" href="resources/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="resources/images/design/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link href="resources/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
 </head>
@@ -45,7 +45,7 @@
       <p><mark>Culinary portal</mark> / Database</p>
       <h1>The world of food</h1>
       <p>Everything about food! And more...</p>
-      <button>Will do something later</button>
+      <button id="hero-zone-button">Go to the page</a></button>
     </section>
 
     <!--Social networks section-->
@@ -65,36 +65,42 @@
 
   <main>
     <!--Content section-->
-    <section class="content">
-      <article class="content_article">
-        <div class="content_article_preview-img">
-          <img src="resources/images/preview_for_artcicle1.jpg" alt="Превью новости"></img>
-        </div>
-
-        <div class="content_article_preview-text">
-          <h3>Кулинары предупреждают: борщ не прощает ошибок</h3>
-          <p>Борщ считается одним из главных блюд у разных народов, и имеет множество рецептов приготовления. Но
-            кулинары
-            уверены, что в любом случае при его приготовлении непростительны ошибки, передает «МИР 24»</p>
-        </div>
-      </article>
-
-      <article class="content_article">
-        <div class="content_article_preview-img">
-          <img src="resources/images/preview_for_artcicle1.jpg" alt="Превью новости"></img>
-        </div>
-
-        <div class="content_article_preview-text">
-          <h3>Кулинары предупреждают: борщ не прощает ошибок</h3>
-          <p>Борщ считается одним из главных блюд у разных народов, и имеет множество рецептов приготовления. Но
-            кулинары
-            уверены, что в любом случае при его приготовлении непростительны ошибки, передает «МИР 24»</p>
-        </div>
-      </article>
-
-      <app-article-preview data-article-name="Pomidoru"></app-article-preview>
-    </section>
+    <articles-preview class="content"></articles-preview>
   </main>
+
+  <footer>
+    <!--Footer section-->
+    <div>
+      <h3>About us</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum, sint corporis nostrum, possimus
+        unde eos vitae eius quasi</p>
+    </div>
+
+    <div>
+      <h3>Contacts</h3>
+      <p>
+        <i class="far fa-compass" title="We are open from 9:00 till 20:00"></i>
+        Kharkiv, Alley of MC Borov 22/8
+      </p>
+      <p>
+        <i class="fas fa-phone"></i>
+        + 380-133-781-231
+      </p>
+      <p>
+        <i class="far fa-envelope"></i>
+        fav755@gmail.com
+      </p>
+    </div>
+
+    <div>
+      <h3>We are open:</h3>
+      <p>Monday - Friday</p>
+      <p>09:00 AM - 18:00 PM</p>
+      <p>Saturday - Sunday</p>
+      <p>12:00 AM - 17:00 PM</p>
+    </div>
+  </footer>
+
   <!--Main script (dont delete)-->
   <script src="scripts/main_script.js"></script>
 </body>
