@@ -12,6 +12,11 @@ const database = {
     {
       name: 'vino',
       date: new Date('05/13/2020')
+    },
+
+    {
+      name: 'food-for-homeless',
+      date: new Date('05/10/2020')
     }
   ],
 };
@@ -31,27 +36,34 @@ document.addEventListener('scroll', function () {
   }
 });
 
-// Load first three not used articles
-async function loadArticles() {
-  const contentElement = document.body.querySelector('.content');
+class ArticlesPreviews extends HTMLElement {
+  constructor() {
+    super();
 
-  for (let i = 0; i < 2; i++) {
+    const buttonForMoreArticle = document.createElement('i');
+    buttonForMoreArticle.className = 'fas fa-plus';
+    buttonForMoreArticle.addEventListener('click', ArticlesPreviews.loadArticles);
+
+    this.after(buttonForMoreArticle);
+  }
+
+  static async loadArticles() {
+    const element = document.querySelector('.content');
     let notUserArticle;
-
+  
     for (let article of database.articles) {
-      if (!contentElement.querySelector(`[name="${article.name}"]`)) {
+      if (!element.querySelector(`[name="${article.name}"]`)) {
         notUserArticle = article;
         break;
       }
     }
-
+  
     await fetch(`resources/articles/${notUserArticle.name}.html`)
       .then((response) => response.text())
-      .then((html) => contentElement.insertAdjacentHTML('beforeEnd', html));
-
-    contentElement.lastElementChild.setAttribute('name', notUserArticle.name);
+      .then((html) => element.insertAdjacentHTML('beforeEnd', html));
+  
+      element.lastElementChild.setAttribute('name', notUserArticle.name);
   }
 }
 
-// Call function to load articles when page is opened first time
-loadArticles();
+customElements.define('articles-preview', ArticlesPreviews);

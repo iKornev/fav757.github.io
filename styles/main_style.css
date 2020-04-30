@@ -188,7 +188,7 @@ main {
  }
 
  /*Button for more articles section*/
- .more-articles-button i{
+ .fas, .fa-plus{
   font-size: 3rem;
   color: gray;
   margin-bottom: 2rem;
