@@ -36,6 +36,11 @@ document.addEventListener('scroll', function () {
   }
 });
 
+//
+document.getElementById('hero-zone-button').addEventListener('click', function () {
+  document.body.querySelector('.social-info').scrollIntoView({behavior: "smooth"});
+});
+
 class ArticlesPreviews extends HTMLElement {
   constructor() {
     super();
