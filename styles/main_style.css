@@ -200,7 +200,7 @@ main {
  }
 
  /*Button for more articles section*/
- .fas, .fa-plus{
+ .content .fas, .fa-plus{
   font-size: 3rem;
   color: gray;
   margin-bottom: 2rem;
